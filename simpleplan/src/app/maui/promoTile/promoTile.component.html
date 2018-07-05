@@ -1,0 +1,21 @@
+<div class="promo-tile__wrapper" *ngIf="showTile">
+    <div class="promo-tile__wrapper-inner">
+        <div class="promo-tile__container">
+            <div class="promo-tile__copy">
+                <div class="promo-tile__copy-header">{{header}}</div>
+                <div class="promo-tile__copy-body">
+                    <ng-content></ng-content>
+                </div>
+                <div class="promo-tile__copy-footer">
+                    <agl-link [target]="linkTarget.self" [href]="footerLink" size="linkSize.large">
+                        <b>{{footerLinkText}}</b>
+                    </agl-link>
+                </div>
+            </div>
+            <div class="promo-tile__icon-container">
+                <img class="promo-tile__icon-container-image" [src]="this.imagePath">
+            </div>
+        </div>
+        <div class="promo-tile__container-gradient">&nbsp;</div>
+    </div>
+</div>

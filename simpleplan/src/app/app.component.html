@@ -1,1 +1,6 @@
 <agl-banner></agl-banner>
+<div class="showcase-btn__wrapper">
+  <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('primaryLarge')" [loading]="isLoadingPrimaryLarge">primary</agl-maui-button></div>
+  <div class="showcase-btn"><agl-maui-button [disabled]="showDisabledState" (clicked)="submitButton('primarySmall')" [loading]="isLoadingPrimarySmall" size="small">primary - small</agl-maui-button></div>
+</div>
+

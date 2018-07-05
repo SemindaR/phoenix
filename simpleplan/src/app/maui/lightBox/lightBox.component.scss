@@ -1,0 +1,120 @@
+@import '../maui';
+$lightbox-width: 660px;
+$lightbox-height: 65vh;
+@include maui-component-reset();
+
+.maui-lightbox {
+    background-color: $neutral-08;
+
+    &-invoke {
+        cursor: pointer;
+    }
+
+    &-shadow {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1001;
+        background-color: $neutral-01;
+        opacity: .5;
+    }
+
+    &-outer {
+        z-index: 1002;
+        display: table;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+    &-middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &-container {
+        border: 1px solid $neutral-03;
+        background: $neutral-08;
+        padding: $space-04;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: $lightbox-height;
+        max-width: $lightbox-width;
+
+        @media #{$agl-layout-mobile} {
+            max-height: 100vh;
+        }
+
+        @media #{$agl-layout-mobile} {
+            padding: $space-03;
+            min-height: 100vh;
+            transform: translateY(0);
+            top: 0px;
+            left: 0px;
+            min-width: 100vw;
+            margin: 0px;
+        }
+
+        &__heading {
+
+            display: inline-block;
+            width: 100%;
+
+            &-title {
+                color: $neutral-01;
+                padding-left: 0px;
+                padding-bottom: $space-04;
+                font-family: $display-font-stack;
+                font-size: $display-font-size-gamma;
+                line-height: $display-font-size-gamma;
+
+                @media #{$agl-layout-mobile} {
+                    font-size: $display-font-size-delta;
+                    line-height: $display-font-size-delta;
+                }
+            }
+
+            &-close {
+                color: $neutral-01;
+                padding-right: 0px;
+                font-size: $display-font-size-alpha;
+
+                &-inner {
+                    float: right;
+                    margin-top: -12px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__content {
+            max-height: calc(#{$lightbox-height} - 125px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom: $space-02;
+
+            @media #{$agl-layout-mobile} {
+                max-height: calc(100vh - 120px);
+            }
+        }
+    }
+
+    &__button-container {
+        padding-top: $space-04;
+        text-align: center;
+        width: 100%;
+
+        &__space {
+            height: 15px;
+            width: 100%;
+
+            @media #{$agl-layout-tablet-and-greater} {
+                display: none;
+            }
+        }
+    }
+}

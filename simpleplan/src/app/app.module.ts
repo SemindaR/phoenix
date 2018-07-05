@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AddressSearchComponent } from './components/address-search/address-search.component';
+import { MauiButtonModule } from './maui/button';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AddressSearchComponent } from './components/address-search/address-sear
     AddressSearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MauiButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
