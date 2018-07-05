@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public showDisabledState: boolean = false;
+  public isLoadingPrimarySmall: boolean = false;
+  public submitButton() {
+    // TODO
+  }
 }

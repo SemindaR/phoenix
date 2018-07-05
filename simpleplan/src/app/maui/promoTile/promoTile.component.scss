@@ -1,0 +1,87 @@
+@import '../maui';
+
+@mixin bannerFonts($font-family, $font-size, $color: null) {
+    font-family: $font-family;
+    font-size: $font-size;
+    @if $color {
+        color: $color;
+    }
+}
+
+$desktop-icon-width: 130px;
+$mobile-icon-width: 70px;
+
+.promo-tile {
+
+    &__wrapper {
+        max-width: $content-width;
+        box-shadow: $shadow-01;
+        background-color: $neutral-08;
+
+        &-inner {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    &__copy {
+        padding: $space-04 0 $space-04 $space-04;
+        @media #{$agl-layout-mobile} {
+            padding: 0 0 $space-04 0;
+            text-align: center;
+        }
+
+        &-header {
+            @include bannerFonts ($display-font-stack, $display-font-size-delta, $primary-dark);
+        }
+
+        &-body {
+            @include bannerFonts ($body-font-stack, $body-font-size-normal, $neutral-01);
+            padding-top: $space-03;
+            @media #{$agl-layout-mobile} {
+                padding-left: $space-03;
+                padding-right: $space-03;
+            }
+        }
+
+        &-footer {
+            @include bannerFonts ($body-font-stack, $body-font-size-small);
+            padding-top: $space-04;
+        }
+    }
+
+    &__icon-container {
+        margin: auto;
+
+        &-image {
+
+            width: $desktop-icon-width;
+            margin: 0 $space-04;
+
+            @media #{$agl-layout-mobile} {
+                width: $mobile-icon-width;
+                margin: $space-04 0  $space-03 0;
+            }
+        }
+
+    }
+
+
+    &__container {
+
+        display: flex;
+
+        @media #{$agl-layout-mobile} {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        &-gradient {
+            background: $gradient-01;
+            width: 100%;
+            height: 5px;
+        }
+    }
+}

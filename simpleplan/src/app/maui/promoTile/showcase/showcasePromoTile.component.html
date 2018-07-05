@@ -1,0 +1,53 @@
+<agl-maui-showcase-template heading="Promo Tile">
+    <div description>
+        <div>The MAUI Promo Tile is used to present promotional offers</div>
+        <p>The tile has 4 sections, the header, body, footer(link) and the image.</p>
+        <p>The body section of the tile is passed and content between the tags (tranclusion) so that html formatting can be used.</p>
+        <p>Note: Image sizes are set to 130 x 130 px and 70 x 70 for mobile.</p>
+
+        <div class="showcase-attributes">
+            <div class="header"> Attributes</div>
+            <table>
+                <tr>
+                    <td>header</td>
+                    <td>string</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>footerLinkText </td>
+                    <td>string</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>footerLink</td>
+                    <td>string</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>imagePath</td>
+                    <td>string</td>
+                    <td>Required</td>
+                </tr>
+                <tr>
+                    <td>showTile</td>
+                    <td>boolean</td>
+                    <td>Required</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div exampleCodeUsage>
+        {{codeUsage}}
+    </div>
+    <div exampleImplementation>
+        <div>
+            <agl-maui-promo-tile [header]="'Bills straight to your inbox'"
+                [footerLinkText]="'Set up eBilling'"
+                [footerLink]="'/maui#button'"
+                [imagePath]="'svg/icon-promo-ebilling.svg'"
+                [showTile]="true">
+                Receive <b>your</b> energy bills via email and enjoy a little less clutter in your life.
+            </agl-maui-promo-tile>
+        </div>
+    </div>
+</agl-maui-showcase-template>
