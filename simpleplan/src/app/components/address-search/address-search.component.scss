@@ -1,0 +1,20 @@
+.agl-address-search {
+  left: 55px;
+  margin: 0 auto;
+  position: absolute;
+  width: 50%;
+
+  &__input {
+    background: #fff;
+    height: 65px;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 0 20px;
+    font-family: inherit;
+     
+    &:focus {
+      outline: none;
+    }
+  }
+}
+  
